@@ -16,7 +16,7 @@ const sideDrawer = (props) => {
         <Aux>
             {/* 神奇的props */}
             <Backdrop show={props.open} clicked={props.closed}/>
-            <div className={attachedClasses.join(' ')}>
+            <div className={attachedClasses.join(' ')} onClick={props.closed} >
                 {/* 这里就体现出enable css module的好处了，同名的class可以随意用 */}
                 <div className={classes.Logo}>
                     <Logo />

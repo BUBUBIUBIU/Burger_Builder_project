@@ -12,7 +12,8 @@ import burgerBuilderReducer from './store/reducers/builderBuilder';
 import orderReducer from './store/reducers/order';
 import authReducer from './store/reducers/auth';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// I access the env variable to check what state (dev or production mode) it is
+const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
 
 const rootReducer = combineReducers({
     burgerBuilder: burgerBuilderReducer, 
