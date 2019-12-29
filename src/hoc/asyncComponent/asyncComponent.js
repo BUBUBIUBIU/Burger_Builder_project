@@ -9,7 +9,8 @@ const asyncComponent = (importComponent) => {
         componentDidMount() {
             importComponent()
                 .then(cmp => {
-                    // 这个default其实就是我们想要dynamic load的component
+                    // this default actually is the component loaded dynamically 
+                    // (and whis is also we want)
                     this.setState({component: cmp.default});
                 });
         }
